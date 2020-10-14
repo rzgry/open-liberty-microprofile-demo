@@ -1,4 +1,4 @@
-package com.example.microprofile.demo.health;
+package com.example.microprofiledemo.health;
 
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
@@ -8,12 +8,10 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Liveness
 @ApplicationScoped
-public class ServiceLiveHealthCheck implements HealthCheck {
+public class LivenessCheck implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
-
-        return HealthCheckResponse.named(ServiceLiveHealthCheck.class.getSimpleName()).withData("live",true).up().build();
-
+        return HealthCheckResponse.named(LivenessCheck.class.getSimpleName()).withData("live", true).up().build();
     }
 }

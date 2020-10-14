@@ -1,4 +1,4 @@
-package com.example.microprofile.demo;
+package com.example.microprofiledemo;
 
 import javax.inject.Singleton;
 import javax.ws.rs.GET;

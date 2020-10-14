@@ -1,4 +1,4 @@
-package com.example.microprofile.demo.config;
+package com.example.microprofiledemo.config;
 
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
@@ -11,7 +11,7 @@ import javax.ws.rs.Path;
 
 @Path("/config")
 @RequestScoped
-public class ConfigTestController {
+public class ConfigSampleController {
 
     @Inject
     @ConfigProperty(name = "injected.value")
@@ -21,13 +21,5 @@ public class ConfigTestController {
     @GET
     public String getInjectedConfigValue() {
         return "Config value as Injected by CDI " + injectedValue;
-    }
-
-    @Path("/lookup")
-    @GET
-    public String getLookupConfigValue() {
-        Config config = ConfigProvider.getConfig();
-        String value = config.getValue("value", String.class);
-        return "Config value from ConfigProvider " + value;
     }
 }
