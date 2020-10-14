@@ -12,8 +12,14 @@ import javax.ws.rs.Path;
 public class HTTPBinController {
 
     @Inject
-	@RestClient
+    @RestClient
     private HTTPBinService service;
+
+    @GET
+    @Path("/uuid")
+    public String uuid() {
+        return service.uuid();
+    }
 
     @GET
     @Path("/200")

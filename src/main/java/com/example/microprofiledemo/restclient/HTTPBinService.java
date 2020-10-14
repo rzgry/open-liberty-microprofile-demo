@@ -11,6 +11,10 @@ import javax.ws.rs.Path;
 public interface HTTPBinService {
 
     @GET
+    @Path("/uuid")
+    String uuid();
+
+    @GET
     @Path("/status/200")
     String ok();
 
